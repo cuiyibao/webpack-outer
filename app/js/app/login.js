@@ -112,7 +112,11 @@ define([
 									}else {
 										localStorage.removeItem('outerPassword');
 									}
-									view.router.navigate("index", {trigger: true});
+									if(data.ifHelp == 1){
+										view.router.navigate("help", {trvimigger: true});
+									}else {
+										view.router.navigate("index", {trigger: true});
+									}
 									toastr.success("登陆成功");
 								}else{
 									$('#myModal_gif').hide();

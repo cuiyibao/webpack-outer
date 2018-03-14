@@ -6,7 +6,7 @@ define([
     'toastr',
 	'ion_rangeSlider',
 	'wizard'
-], function(Backbone, common,tpl,Metronic,toastr) {
+], function(Backbone, common, text,tpl,Metronic,toastr) {
 	var View = Backbone.View.extend({
 		el: '#page-content',
 		initialize: function(router) {
@@ -93,7 +93,6 @@ define([
                         .closest('.form-group').removeClass('has-error').addClass('has-success'); // set success class to the control group
                     }
                 },
-
                 submitHandler: function (form) {
                     success.show();
                     error.hide();
@@ -108,7 +107,6 @@ define([
                             "ispIpPort":view.result['ispIpPort']
                         },
                         function(data){
-                            
                             if(data.status =="200"){
                               $('#myModal_gif').hide();
                                 toastr.success("提交成功");
@@ -305,7 +303,6 @@ define([
                 }else{
                   $("#"+type_oper).click();
                 }
-                
             });
 
             var handleTitle = function(tab, navigation, index) {

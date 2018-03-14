@@ -7,8 +7,8 @@ define([
 	'toastr',
     'tableTools',
     'scroller',
-    'dataTables_bootstrap'
-], function(Backbone, datatimepicker,common,datatables,tpl,toastr) {
+    'dataTables_bootstrap',
+], function(Backbone, datatimepicker,common, text,dataTable,tpl,toastr) {
 	var View = Backbone.View.extend({
 		el: '#page-content',
 		initialize: function(router) {

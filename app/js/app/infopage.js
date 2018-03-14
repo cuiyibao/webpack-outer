@@ -4,7 +4,7 @@ define([
 	'tpl/infopage.html',
 	'datatimepicker',
 	'toastr'
-], function(Backbone, common,tpl,datatimepicker,toastr) {
+], function(Backbone, common, text,tpl,datatimepicker,toastr) {
 	var View = Backbone.View.extend({
 		el: '#page-content',
 		initialize: function(router) {

@@ -6,13 +6,13 @@ define([
     'flotResize',
     'flotCategories',
     'flotTime'
-], function(Backbone, common,tpl) {
+], function(Backbone, common, text,tpl) {
 	var View = Backbone.View.extend({
 		el: '#page-content',
 		initialize: function(router) {
             this.$el.html(tpl);
-			this.render();
             this.router = router;
+			this.render();
 		},
 		render: function() {	
 

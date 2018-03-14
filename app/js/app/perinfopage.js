@@ -4,7 +4,7 @@ define([
 	'tpl/perinfopage.html',
 	'toastr',
 	'md5'
-], function(Backbone, common, tpl,toastr,md5) {
+], function(Backbone, common, text, tpl,toastr,md5) {
 	var View = Backbone.View.extend({
 		el: '#page-content',
 		initialize: function(router) {

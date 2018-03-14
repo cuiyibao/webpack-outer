@@ -2,7 +2,7 @@ define([
 	'backbone',
 	'common',
 	'tpl/helppage.html'
-], function(Backbone, urls,tpl) {
+], function(Backbone, urls, text,tpl) {
 	var View = Backbone.View.extend({
 		el: '#page-content',
 		initialize: function(router) {

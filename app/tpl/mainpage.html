@@ -33,87 +33,6 @@
 						</li>
 						<li>
 							<ul class="dropdown-menu-list scroller" style="height: 250px;" data-handle-color="#637283">
-								<!-- <li>
-									<a href="javascript:;">
-									<span class="time">刚刚</span>
-									<span class="details">
-									<span class="label label-sm label-icon label-success">
-									<i class="fa fa-plus"></i>
-									</span>
-									配置准备完成. </span>
-									</a>
-								</li>
-								<li>
-									<a href="javascript:;">
-									<span class="time">3 分钟前</span>
-									<span class="details">
-									<span class="label label-sm label-icon label-danger">
-									<i class="fa fa-bolt"></i>
-									</span>
-									ddos攻击开始. </span>
-									</a>
-								</li>
-								<li>
-									<a href="javascript:;">
-									<span class="time">10 分钟前</span>
-									<span class="details">
-									<span class="label label-sm label-icon label-warning">
-									<i class="fa fa-bell-o"></i>
-									</span>
-									ddos攻击结束. </span>
-									</a>
-								</li>
-								<li>
-									<a href="javascript:;">
-									<span class="time">14 小时前</span>
-									<span class="details">
-									<span class="label label-sm label-icon label-info">
-									<i class="fa fa-bullhorn"></i>
-									</span>
-									系统维护. </span>
-									</a>
-								</li>
-								<li>
-									<a href="javascript:;">
-									<span class="time">2 天前</span>
-									<span class="details">
-									<span class="label label-sm label-icon label-danger">
-									<i class="fa fa-bolt"></i>
-									</span>
-									ddos攻击开始. </span>
-									</a>
-								</li>
-								
-								<li>
-									<a href="javascript:;">
-									<span class="time">4 天前</span>
-									<span class="details">
-									<span class="label label-sm label-icon label-warning">
-									<i class="fa fa-bell-o"></i>
-									</span>
-									ddos攻击结束 </span>
-									</a>
-								</li>
-								<li>
-									<a href="javascript:;">
-									<span class="time">5 天前</span>
-									<span class="details">
-									<span class="label label-sm label-icon label-info">
-									<i class="fa fa-bullhorn"></i>
-									</span>
-									系统维护. </span>
-									</a>
-								</li>
-								<li>
-									<a href="javascript:;">
-									<span class="time">9 天前</span>
-									<span class="details">
-									<span class="label label-sm label-icon label-danger">
-									<i class="fa fa-bolt"></i>
-									</span>
-									ddos攻击开始. </span>
-									</a>
-								</li> -->
 							</ul>
 						</li>
 					</ul>
@@ -131,32 +50,16 @@
 							<a href="#perinfo">
 							<i class="icon-user"></i> 个人信息修改 </a>
 						</li>
-					
-						<!-- <li>
-							<a href="inbox.html">
-							<i class="icon-envelope-open"></i> My Inbox <span class="badge badge-danger">
-							3 </span>
-							</a>
-						</li> -->
-						
-					<!-- 	<li class="divider">
-						</li> -->
-						
+						<li>
+							<a href="#help">
+								<i class="icon-docs"></i> 帮助手册 </a>
+						</li>
 						<li>
 							<a href="#login" id="logout">
 							<i class="icon-logout"></i> 登出 </a>
 						</li>
 					</ul>
 				</li>
-				<!-- END USER LOGIN DROPDOWN -->
-				<!-- BEGIN QUICK SIDEBAR TOGGLER -->
-				<!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
-				<!-- <li class="dropdown dropdown-quick-sidebar-toggler">
-					<a href="javascript:;" class="dropdown-toggle">
-					<i class="icon-logout"></i>
-					</a>
-				</li> -->
-				<!-- END QUICK SIDEBAR TOGGLER -->
 			</ul>
 		</div>
 		<!-- END TOP NAVIGATION MENU -->
@@ -170,13 +73,9 @@
 <div class="page-container">
 	<!-- BEGIN SIDEBAR -->
 	<div class="page-sidebar-wrapper">
-		<!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
-		<!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
 		<div class="page-sidebar navbar-collapse collapse">
 			<!-- BEGIN SIDEBAR MENU1 -->
 			<ul class="page-sidebar-menu hidden-sm" data-auto-scroll="true" data-slide-speed="200">
-				<!-- DOC: To remove the search box from the sidebar you just need to completely remove the below "sidebar-search-wrapper" LI element -->
-				<!-- DOC: This is mobile version of the horizontal menu. The desktop version is defined(duplicated) in the header above -->
 				<li class="start active">
 					<a href="#index">
 						<i class="icon-home"></i>
@@ -185,14 +84,38 @@
 						<span class="selected"></span>
 					</a>
 				</li>
-				<li >
-					<a href="#config">
-					<i class="icon-settings"></i>
-					<span class="title">
-					配置管理 </span>
-					<span class="selected"></span>
+				<li class="start">
+					<a href="#resource">
+						<i class="icon-wrench"></i>
+						<span class="title">
+						 防护资源管理 </span>
+						<span class="selected"></span>
 					</a>
 				</li>
+				<li class="start">
+					<a href="#business">
+						<i class="icon-wallet"></i>
+						<span class="title">
+						业务规则管理 </span>
+						<span class="selected"></span>
+					</a>
+				</li>
+				<!--<li class="start">-->
+					<!--<a href="#ruleconfig">-->
+						<!--<i class="icon-notebook"></i>-->
+						<!--<span class="title">-->
+						<!--规则配置 </span>-->
+						<!--<span class="selected"></span>-->
+					<!--</a>-->
+				<!--</li>-->
+				<!--<li>-->
+					<!--<a href="#config">-->
+					<!--<i class="icon-settings"></i>-->
+					<!--<span class="title">-->
+					<!--配置管理 </span>-->
+					<!--<span class="selected"></span>-->
+					<!--</a>-->
+				<!--</li>-->
 				<li class="last">
 					<a href="#help">
 					<i class="icon-docs"></i>
@@ -202,10 +125,6 @@
 					</a>
 				</li>
 			</ul>
-			<!-- END SIDEBAR MENU1 -->
-			<!-- BEGIN RESPONSIVE MENU FOR HORIZONTAL & SIDEBAR MENU -->
-			
-			<!-- END RESPONSIVE MENU FOR HORIZONTAL & SIDEBAR MENU -->
 		</div>
 	</div>
 	<!-- END SIDEBAR -->

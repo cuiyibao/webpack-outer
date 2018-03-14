@@ -1,0 +1,427 @@
+<main>
+    <div class="row page1">
+        <div class="col-md-12">
+            <div class="portlet box blue-ebonyclay" style="margin-bottom: 0">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="fa fa-globe"></i>{{ h1 }}
+                    </div>
+                    <div class="actions">
+                        <a id="business_1_add" class="btn btn-default btn-sm">
+                            <i class="fa fa-plus"></i> 添加新业务组 </a>
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <form action="#" class="form-horizontal">
+                        <div class="form-body">
+                            <div class="row">
+                                <% _.each(search1, function(value,index){ %>
+                                <% var arr1 = [8,2,3],arr2 = [4,4,6] %>
+                                <% if(value.childNode){ %>
+                                <% arr = [8,2,3]; %>
+                                <% }else{ %>
+                                <% arr = [4,4,6]; %>
+                                <% } %>
+                                <div class="col-md-{{arr[0]}}">
+                                    <div class="form-group">
+                                        <label class="col-md-{{arr[1]}} control-label">{{value.span}}</label>
+                                        <div class="col-md-{{arr[2]}}">
+                                            <% if(value.type == 'select'){ %>
+                                            <select class="form-control" data-param="{{value.data}}">
+                                                <% _.each(value.child, function(val,ind){ %>
+                                                <option value="{{val.val}}">{{val.text}}</option>
+                                                <% }); %>
+                                            </select>
+                                            <% }else if(value.type == 'time'){ %>
+                                            <input id="datetimeStart1" type="text" readonly class="form-control datatime_picker" data-param="{{value.data}}">
+                                            <% }else{ %>
+                                            <input type="{{value.type}}" class="form-control" data-param="{{value.data}}">
+                                            <% }%>
+                                        </div>
+                                        <% if(value.childNode){ %>
+                                        <label style="float: left" class="control-label">至</label>
+                                        <div class="col-md-3">
+                                            <input id="datetimeEnd1" type="text" readonly class="form-control datatime_picker" data-param="{{value.childNode.data}}">
+                                        </div>
+                                        <% } %>
+                                    </div>
+                                </div>
+                                <% }); %>
+                                <div class="col-md-11 text-right">
+                                    <button type="submit" data-page="1" class="btn blue search-reload">搜索</button>
+                                    <button type="button" data-page="1" class="btn default search-clear">重置</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row page1">
+        <div class="col-md-12">
+            <div class="portlet box blue-ebonyclay">
+                <div class="portlet-body">
+                    <div class="table-toolbar show" style="position: absolute;right: 35px;">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="btn-group">
+                                    <button id="business_1_delete" class="btn green">
+                                        删除 <i class="fa fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="btn-group">
+                                    <button id="business_1_modify" class="btn green">
+                                        修改 <i class="fa fa-tag"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <table class="table table-striped table-bordered table-hover" id="business_1">
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row page2" style="display: none">
+        <div class="col-md-12">
+            <div class="portlet box blue-ebonyclay" style="margin-bottom: 0">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="fa fa-globe"></i>{{ h2 }}
+                        <a href="javascript:void(0)" class="page-title-return" style="color: rgb(255, 255, 255);">
+                            <i class="icon-logout"></i>
+                        </a>
+                    </div>
+                    <div class="actions">
+                        <a class="btn btn-default btn-sm" id="business_2_add">
+                            <i class="fa fa-plus"></i> 配置新规则 </a>
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <form action="#" class="form-horizontal">
+                        <div class="form-body">
+                            <div class="row">
+                                <% _.each(search2, function(value,index){ %>
+                                <% var arr1 = [8,2,3],arr2 = [4,4,6] %>
+                                <% if(value.childNode){ %>
+                                <% arr = [8,2,3]; %>
+                                <% }else{ %>
+                                <% arr = [4,4,6]; %>
+                                <% } %>
+                                <div class="col-md-{{arr[0]}}">
+                                    <div class="form-group">
+                                        <label class="col-md-{{arr[1]}} control-label">{{value.span}}</label>
+                                        <div class="col-md-{{arr[2]}}">
+                                            <% if(value.type == 'select'){ %>
+                                            <select class="form-control" data-param="{{value.data}}">
+                                                <% _.each(value.child, function(val,ind){ %>
+                                                <option value="{{val.val}}">{{val.text}}</option>
+                                                <% }); %>
+                                            </select>
+                                            <% }else if(value.type == 'time'){ %>
+                                            <input id="datetimeStart2" type="text" readonly class="form-control datatime_picker" data-param="{{value.data}}">
+                                            <% }else{ %>
+                                            <input type="{{value.type}}" class="form-control" data-param="{{value.data}}">
+                                            <% }%>
+                                        </div>
+                                        <% if(value.childNode){ %>
+                                        <label style="float: left" class="control-label">至</label>
+                                        <div class="col-md-3">
+                                            <input id="datetimeEnd2" type="text" readonly class="form-control datatime_picker" data-param="{{value.childNode.data}}">
+                                        </div>
+                                        <% } %>
+                                    </div>
+                                </div>
+                                <% }); %>
+                                <div class="col-md-11 text-right">
+                                    <button type="submit" data-page="2" class="btn blue search-reload">搜索</button>
+                                    <button type="button" data-page="2" class="btn default search-clear">重置</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row page2" style="display: none">
+        <div class="col-md-12">
+            <div class="portlet box blue-ebonyclay">
+                <div class="portlet-body">
+                    <div class="table-toolbar show" style="position: absolute;right: 35px;">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="btn-group">
+                                    <button id="business_2_delete" class="btn green">
+                                        删除 <i class="fa fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="btn-group">
+                                    <button id="business_2_modify" class="btn green">
+                                        修改 <i class="fa fa-tag"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <table class="table table-striped table-bordered table-hover" id="business_2">
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<aside>
+    <div class="modal fade in" id="add_business" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close close-white" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title">添加新业务组</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="#" class="form-horizontal">
+                        <div class="form-body">
+                            <div class="row">
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">业务组</label>
+                                    <div class="col-md-7">
+                                        <input class="form-control add-form-group" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">
+                                        IP白名单
+                                    </label>
+                                    <div class="col-md-7">
+                                        <input class="form-control add-form-white" readonly type="text" placeholder="暂未开启IP白名单服务">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">
+                                        IP黑名单
+                                    </label>
+                                    <div class="col-md-7">
+                                        <input class="form-control add-form-black" readonly type="text" placeholder="暂未开启IP黑名单服务">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn blue">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade in" id="add_ruleConfig" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog" style="width: 989px">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: rgb(34, 49, 63);color: rgb(255, 255, 255)">
+                    <button type="button" class="close close-white" data-dismiss="modal" aria-hidden="true"></button>
+                    <!--<h4 class="modal-title">添加新业务组</h4>-->
+                    <div class="caption">
+                        <i class="fa fa-gift"></i> 配置向导 - <span class="step-title">
+								第1步 </span>
+                    </div>
+                </div>
+                <form class="form-horizontal" id="submit_form">
+                    <div class="form-wizard">
+                        <div class="modal-body form">
+                            <div class="form-body">
+                                <ul class="nav nav-pills nav-justified steps">
+                                    <li>
+                                        <a href="#tab1" data-toggle="tab" class="step">
+                                            <span class="number">1 </span>
+                                            <span class="desc"><i class="fa fa-check"></i> 基础配置 </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#tab2" data-toggle="tab" class="step">
+                                            <span class="number">2 </span>
+                                            <span class="desc"><i class="fa fa-check"></i> 配置IP </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#tab3" data-toggle="tab" class="step active">
+                                            <span class="number">3 </span>
+                                            <span class="desc"><i class="fa fa-check"></i> 确认 </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div id="bar" class="progress progress-striped" role="progressbar">
+                                    <div class="progress-bar progress-bar-success">
+                                    </div>
+                                </div>
+                                <div class="tab-content">
+                                    <div class="alert alert-danger display-none">
+                                        <button class="close" data-dismiss="alert"></button>
+                                        添加失败,所填内容有误.
+                                    </div>
+                                    <div class="alert alert-success display-none">
+                                        <button class="close" data-dismiss="alert"></button>
+                                        添加成功!
+                                    </div>
+                                    <div class="tab-pane active" id="tab1">
+                                        <h3 class="block">基础配置</h3>
+                                        <div class="form-group tab1-business">
+                                            <label class="control-label col-md-3">
+                                                业务组 <span class="required"> * </span>
+                                            </label>
+                                            <div class="col-md-4">
+                                                <p class="form-control-static add_ruleConfig_name">王者荣耀</p>
+                                            </div>
+                                        </div>
+                                        <div class="form-group tab1-rule">
+                                            <label class="control-label col-md-3">
+                                                转发规则 <span class="required"> * </span>
+                                            </label>
+                                            <div class="md-radio-inline col-md-4">
+                                                <div class="md-radio">
+                                                    <input type="radio" value="1" id="radio1-1" name="rule" class="md-radiobtn {required:true}" checked>
+                                                    <label for="radio1-1" data-value="tcp">
+                                                        <span></span>
+                                                        <span class="check"></span>
+                                                        <span class="box"></span>轮询
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group tab1-protocol">
+                                            <label class="control-label col-md-3">
+                                                转发协议 <span class="required"> * </span>
+                                            </label>
+                                            <div class="md-radio-inline col-md-4">
+                                                <div class="md-radio">
+                                                    <input type="radio" value="1" id="radio2-1" name="protocol" class="md-radiobtn {required:true}" checked>
+                                                    <label for="radio2-1" data-value="tcp">
+                                                        <span></span>
+                                                        <span class="check"></span>
+                                                        <span class="box"></span>TCP/UDP</label>
+                                                </div>
+                                                <div class="md-radio">
+                                                    <input type="radio" value="2" id="radio2-2" name="protocol" class="md-radiobtn">
+                                                    <label for="radio2-2" data-value="http">
+                                                        <span></span>
+                                                        <span class="check"></span>
+                                                        <span class="box"></span>HTTP
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="tab2">
+                                        <!--<h3 class="block">配置IP</h3>-->
+                                        <h4 class="form-section">源IP配置</h4>
+                                        <div class="row">
+                                            <div class="form-group col-md-5 tab2-sip">
+                                                <label class="control-label col-md-6">
+                                                    源IP <span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-6">
+                                                    <input class="form-control" type="text" name="ip">
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-5 tab2-sport">
+                                                <label class="control-label col-md-4">
+                                                    端口 <span class="required"> * </span>
+                                                </label>
+                                                <div class="col-md-6">
+                                                    <input class="form-control" type="number" name="port">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h4 class="form-section" style="margin-top: 0">清洗IP配置</h4>
+                                        <div class="tab2-dip-list">
+                                            <div class="row tab2-dip">
+                                                <div class="form-group col-md-5">
+                                                    <label class="control-label col-md-6">
+                                                        清洗IP <span class="required"> * </span>
+                                                    </label>
+                                                    <div class="col-md-6">
+                                                        <select class="form-control tab2-dip-ip" name="ip1">
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-md-5">
+                                                    <label class="control-label col-md-4">
+                                                        端口 <span class="required"> * </span>
+                                                    </label>
+                                                    <div class="col-md-6">
+                                                        <input class="form-control tab2-dip-port" type="number" name="port1">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-1">
+                                                    <a href="javascript:;" class="btn btn-icon-only red plus_btn" data-num="2">
+                                                        <i class="fa fa-plus"></i>
+                                                    </a>
+                                                </div>
+                                                <div class="col-md-1">
+                                                    <a href="javascript:;" class="btn btn-icon-only red plus_minus">
+                                                        <i class="fa fa-minus"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div style="clear:both"></div>
+                                    </div>
+                                    <!--<div class="tab-pane" id="tab3">-->
+                                    <!--<h3 class="block">配置地域</h3>-->
+                                    <!--<h4 class="form-section">IP与地域</h4>-->
+                                    <!--<div class="form-group">-->
+                                    <!--<label class="control-label col-md-3">地域</label>-->
+                                    <!--<div class="col-md-4">-->
+                                    <!--<p class="form-control-static">暂未开启地域服务</p>-->
+                                    <!--</div>-->
+                                    <!--</div>-->
+                                    <!--</div>-->
+                                    <div class="tab-pane" id="tab3">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="form-actions">
+                                <div class="row">
+                                    <div class="col-md-offset-3 col-md-9">
+                                        <a href="javascript:;" class="btn default button-previous">
+                                            <i class="m-icon-swapleft"></i> 返回 </a>
+                                        <a href="javascript:;" class="btn blue button-next next_btn">
+                                            下一步 <i class="m-icon-swapright m-icon-white"></i>
+                                        </a>
+                                        <a id="submit" class="btn btn-success button-submit uppercase">提交<i class="m-icon-swapright m-icon-white"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade in" id="ip_detail" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close close-white" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title">清洗IP列表</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="#" class="form-horizontal">
+                        <div class="form-body">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</aside>
+

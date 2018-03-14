@@ -1,13 +1,30 @@
-define(["toastr"],function(toastr){
-    // var ip="http://47.94.172.191:8080";
+define(["toastr",'metronic'],function(toastr,Metronic){
+    // var ip="http://172.16.8.54:8080";
     // var ip="http://172.16.8.61:8080";
     var ip="";
     var json = './json';
     var sysName="/dshield-outer-system/userInfo";
     var sysConfig = '/dshield-outer-system/ConfigController';
     var sysNotice = '/dshield-outer-system/notice';
-   
+    var resource = '/dshield-outer-system/resource';
+    var business = '/dshield-outer-system/business';
+    var rule = '/dshield-outer-system/rule';
+    toastr.options = {
+        "closeButton": true,
+        "debug": false,
+        "positionClass": "toast-top-center",
+        "onclick": null,
+        "showDuration": "1000",
+        "hideDuration": "1000",
+        "timeOut": "5000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+    };
 	var url={
+        ip:ip,
         urls:{
             login:ip+sysName+"/login",
             register:ip+sysName+"/register",
@@ -23,6 +40,20 @@ define(["toastr"],function(toastr){
             operation:ip+sysConfig+'/operation', 
             download:ip+sysConfig+'/downloadFile?path=',
             getImg:ip+sysName+'/getImg',
+
+            //新增模块
+            resourceSelect:ip+resource+'/selectAllResource',
+            resourceInsert:ip+resource+'/insertResource',
+            resourceUpdate:ip+resource+'/updateResource',
+            businessSelect:ip+business+'/selectAllBusiness',
+            businessInsert:ip+business+'/insertBusiness',
+            businessDelete:ip+business+'/deleteBusinessById',
+            businessUpdate:ip+business+'/updateBusinessName',
+            ruleSelect:ip+rule+'/selectAllRule',
+            ruleInsert:ip+rule+'/insertRule',
+            ruleDelete:ip+rule+'/deleteRuleById',
+            ruleUpdate:ip+rule+'/updateRule',
+            selectByUserId:ip+'/dshield-outer-system/rinse'+'/selectByUserId',
 
             // websocket:"ws://172.16.8.61:8080/dshield-outer-system/websocket/chat"
             websocket:"ws://183.134.63.130:60666/dshield-outer-system/websocket/chat"
@@ -198,20 +229,14 @@ define(["toastr"],function(toastr){
                     "ajax": { 
                         "url": url, 
                         "type": "POST",
-                        // "data":function(extra){
-                        //     debugger
-                        //     return $.extend({},extra);
-                        // },
                         "data":extra,
                         "dataSrc":function(data){
                             if(data.status=="500"){
                                view.logout(router);
                             }
-
                             return data.data?data.data:"";
                         }
                     }, 
-                    // Internationalisation. For more info refer to http://datatables.net/manual/i18n
                     "language": {
                         "aria": {
                             "sortAscending": ": 正序",
@@ -219,7 +244,7 @@ define(["toastr"],function(toastr){
                         },
                         "emptyTable": "无数据",
                         "info": " _START_ - _END_ ,共 _TOTAL_ 条",
-                        // "infoEmpty": "",
+                        "infoEmpty": " _START_ - _END_ ,共 _TOTAL_ 条",
                         "infoFiltered": "(共 _MAX_ 条)",
                         "lengthMenu": "每页 _MENU_ 条",
                         "search": "搜索:",
@@ -227,8 +252,6 @@ define(["toastr"],function(toastr){
                     },
                     "order": [[ 1, 'desc' ]],
                     "columns": columns,
-
-
                     // "columnDefs": [{
                     //     "orderable": false,
                     //     "targets": [0]
@@ -242,64 +265,39 @@ define(["toastr"],function(toastr){
                     // ],
                     // // set the initial value
                     // "pageLength": 10,
+                    "drawCallback": function (setting) {
+                        Metronic.initUniform($('input[type="checkbox"]', table));
+                        $(this).find('.group-checkable').prop('checked',false);
+                    }
                 });
             }
-            // var oTable = table.DataTable({
-            //     "processing": true, 
-            //     "serverSide": true, 
-            //     "ajax": { 
-            //         "url": url, 
-            //         "type": "POST",
-            //         "data":extra,
-            //         "dataSrc":function(data){
-            //             if(data.status=="500"){
-            //                view.logout(router);
-            //             }
-
-            //             return data.data?data.data:"";
-            //         }
-            //     }, 
-            //     // Internationalisation. For more info refer to http://datatables.net/manual/i18n
-            //     "language": {
-            //         "aria": {
-            //             "sortAscending": ": 正序",
-            //             "sortDescending": ": 反序"
-            //         },
-            //         "emptyTable": "无数据",
-            //         "info": " _START_ - _END_ ,共 _TOTAL_ 条",
-            //         "infoEmpty": "无数据",
-            //         "infoFiltered": "(共 _MAX_ 条)",
-            //         "lengthMenu": "每页 _MENU_ 条",
-            //         "search": "搜索:",
-            //         "zeroRecords": "搜索到0条"
-            //     },
-            //     "order": [[ 1, 'desc' ]],
-            //     "columns": columns,
-
-
-            //     // "columnDefs": [{
-            //     //     "orderable": false,
-            //     //     "targets": [0]
-            //     // }],
-            //     // "order": [
-            //     //     [1, 'asc']
-            //     // ],
-            //     // "lengthMenu": [
-            //     //     [5, 10, 15, 20, -1],
-            //     //     [5, 10, 15, 20] // change per page values here
-            //     // ],
-            //     // // set the initial value
-            //     // "pageLength": 10,
-            // });
-
             var tableWrapper = $(con+'_wrapper'); // datatable creates the table wrapper by adding with id {your_table_jd}_wrapper
             var tableColumnToggler = $(con+'_column_toggler');
 
             /* modify datatable control inputs */
             tableWrapper.find('.dataTables_length select').select2({minimumResultsForSearch: -1}); // initialize select2 dropdown
 
-           
 
+
+            table.off('change', '.group-checkable');
+            table.on('change','.group-checkable',function () {
+                var set = jQuery(this).attr("data-set");
+                var checked = jQuery(this).is(":checked");
+                jQuery(set).each(function () {
+                    if (checked) {
+                        $(this).prop("checked", true);
+                        $(this).parents('tr').addClass("active");
+                    } else {
+                        $(this).prop("checked", false);
+                        $(this).parents('tr').removeClass("active");
+                    }
+                });
+                jQuery.uniform.update(set);
+            });
+            table.off('change', 'tbody tr .checkboxes');
+            table.on('change', 'tbody tr .checkboxes', function () {
+                $(this).parents('tr').toggleClass("active");
+            });
             /* handle show/hide columns*/
             $('input[type="checkbox"]', tableColumnToggler).change(function () {
                 /* Get the DataTables object again - this is not a recreation, just a get of the object */
@@ -381,6 +379,95 @@ define(["toastr"],function(toastr){
                 });
             }
             $(ID).modal('show');
+        },
+        //自定义ajax请求
+        request: function (url, data, callback,timeout) {
+            var util = this,LOAD = false;
+            if(timeout){LOAD = true;}
+            timeout ? timeout : timeout = 5000;
+            if(LOAD){$('.modal_loading').addClass('show').removeClass('hide');}
+            data['token'] = $.cookie("TOKEN")!=undefined?$.cookie("TOKEN").token:"";
+            data["t"]=new Date().getTime();
+            $.ajax({
+                url: url,
+                timeout:timeout,
+                type: 'POST',
+                dataType: 'json',
+                data: data,
+                success: function (json) {
+                    if(LOAD){$('.modal_loading').addClass('hide').removeClass('show');}
+                    if (json.status == 200) {
+                        callback(json);
+                    }else if(json.status == 400){
+                        toastr.error(json.message);
+                    }else if(json.status == 500){
+                        toastr.error("登录已过期，请重新登录");
+                        setTimeout(function () {
+                            $('.modal-backdrop').hide();
+                            $.removeCookie('TOKEN');
+                            $.removeCookie('cokenttt');
+                            window.location.href = "" + window.location.origin + "/dshield-outer-system/#login";
+                        },3000);
+                    }
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    if(LOAD){$('.modal_loading').addClass('hide').removeClass('show');}
+                    if(textStatus=="timeout"){
+                        toastr.error("加载超时，请重试");
+                    }else{
+                        toastr.error("服务请求异常");
+                    }
+                }
+            });
+        },
+        //XSS
+        jsonErgo:function (json) {
+            var ergo = function (json) {
+                if(Object.prototype.toString.call(json) === '[object Array]'){
+                    for(var i=0;i<json.length;i++){
+                        json[i] = ergo(json[i]);
+                    }
+                }
+                if(typeof(json) == "object" && Object.prototype.toString.call(json).toLowerCase() == "[object object]"){
+                    for(var key in json){
+                        if(key == 'title' || key == 'sTitle'){
+                            json[key] = json[key];
+                        }else {
+                            json[key] = ergo(json[key]);
+                        }
+                    }
+                }
+                if(Object.prototype.toString.call(json) === '[object String]'){
+                    json = xssCheck(json);
+                }
+                return json;
+            };
+            json = ergo(json);
+            return json;
+            function xssCheck(str){
+                if(typeof str != 'string'){return str;}
+                if (str) {
+                    var RexStr = /\<|\>|\&/g;
+                    str = str.replace(RexStr, function(MatchStr) {
+                        switch (MatchStr) {
+                            case "<":
+                                return "&lt;";
+                                break;
+                            case ">":
+                                return "&gt;";
+                                break;
+                            case "&":
+                                return "&amp;";
+                                break;
+                            default:
+                                break;
+                        }
+                    })
+                } else {
+                    str = '';
+                }
+                return str;
+            }
         }
 	};
 	return url;
