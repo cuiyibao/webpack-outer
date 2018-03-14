@@ -1,0 +1,258 @@
+<h3 class="page-title">
+	申请新的配置
+</h3>
+<!-- END PAGE HEADER-->
+<!-- BEGIN PAGE CONTENT-->
+<div class="row">
+    <div class="col-md-12">
+        <div class="portlet box blue" id="form_wizard_1">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-gift"></i> 配置向导 - <span class="step-title">
+								第1步 </span>
+                </div>
+            </div>
+            <div class="portlet-body form">
+                <form class="form-horizontal" id="submit_form">
+                    <div class="form-wizard">
+                        <div class="form-body">
+                            <ul class="nav nav-pills nav-justified steps">
+                                <li>
+                                    <a href="#tab1" data-toggle="tab" class="step">
+										<span class="number">1 </span>
+										<span class="desc"><i class="fa fa-check"></i> 基础配置 </span>
+									</a>
+                                </li>
+                                <li>
+                                    <a href="#tab2" data-toggle="tab" class="step">
+										<span class="number">2 </span>
+										<span class="desc"><i class="fa fa-check"></i> 配置IP </span>
+									</a>
+                                </li>
+                                <li>
+                                    <a href="#tab3" data-toggle="tab" class="step active">
+										<span class="number">3 </span>
+										<span class="desc"><i class="fa fa-check"></i> 确认 </span>
+									</a>
+                                </li>
+                            </ul>
+                            <div id="bar" class="progress progress-striped" role="progressbar">
+                                <div class="progress-bar progress-bar-success">
+                                </div>
+                            </div>
+                            <div class="tab-content">
+                                <div class="alert alert-danger display-none">
+                                    <button class="close" data-dismiss="alert"></button>
+                                    添加失败,所填内容有误.
+                                </div>
+                                <div class="alert alert-success display-none">
+                                    <button class="close" data-dismiss="alert"></button>
+                                    添加成功!
+                                </div>
+                                <div class="tab-pane active" id="tab1">
+                                    <h3 class="block">基础配置</h3>
+                                    <div class="form-group form-md-line-input">
+                                        <label class="control-label col-md-3">选择服务类型 <span class="required">
+													* </span>
+                                        </label>
+                                        <div class="col-md-4">
+                                            <div class="md-radio-inline">
+												<div class="md-radio" >
+													<input type="radio" id="radio8" name="web" class=" {required:true} md-radiobtn" checked>
+													<label for="radio8">
+													<span></span>
+													<span class="check"></span>
+													<span class="box"></span>
+													非web服务 </label>
+												</div>
+												<div class="md-radio">
+													<input type="radio" id="radio9" name="web" class="md-radiobtn">
+													<label for="radio9">
+													<span></span>
+													<span class="check"></span>
+													<span class="box"></span>
+													web服务 </label>
+												</div>
+											</div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group band_width">
+                                        <label class="control-label col-md-3">回流带宽 <span class="required">
+													* </span>
+                                        </label>
+                                        <div class="col-md-4">
+                                           	<input id="range" type="text" name="returnBandwidth" value="100;1000"/>
+                                       
+                                        </div>
+                                    </div>
+                                    <div class="form-group clear_flow">
+                                        <label class="control-label col-md-3"> 清洗流量 <span class="required">
+													* </span>
+                                        </label>
+                                        <div class="col-md-4">
+                                            <input id="range1" type="text" name="cleanFlow" value="100;1000"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group form-md-line-input">
+                                        <label class="control-label col-md-3">协议类型 <span class="required">
+													* </span>
+                                        </label>
+                                        <div class="col-md-4 ">
+                                            <div class="md-radio-inline">
+												<div class="md-radio">
+													<input type="radio" id="radio1" name="protocol" class="md-radiobtn {required:true}" checked>
+													<label for="radio1" data-value="tcp">
+													<span></span>
+													<span class="check"></span>
+													<span class="box"></span>TCP</label>
+												</div>
+												<div class="md-radio">
+													<input type="radio" id="radio2" name="protocol" class="md-radiobtn">
+													<label for="radio2" data-value="udp">
+													<span></span>
+													<span class="check"></span>
+													<span class="box"></span>UDP</label>
+												</div>
+												<div class="md-radio">
+													<input type="radio" id="radio3" name="protocol" class="md-radiobtn">
+													<label for="radio3" data-value="http">
+													<span></span>
+													<span class="check"></span>
+													<span class="box"></span>HTTP</label>
+												</div>
+												<div class="md-radio">
+													<input type="radio" id="radio4" name="protocol" class="md-radiobtn">
+													<label for="radio4" data-value="https">
+													<span></span>
+													<span class="check"></span>
+													<span class="box"></span>HTTPS</label>
+												</div>
+											</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane" id="tab2">
+                                    <h3 class="block">配置IP</h3>
+                                    <h4 class="form-section">运营商选择</h4>
+                                    <div class="form-group form-md-checkboxes">
+                                        <label class="control-label col-md-3">运营商 <span class="required">
+													* </span>
+                                        </label>
+                                        <div class="col-md-4 form-md-line-input">
+                                            <div class="md-checkbox-inline">
+												<div class="md-checkbox">
+													<input type="checkbox" id="CUCC" class="md-check " required name="checkbox1">
+													<label for="CUCC">
+													<span></span>
+													<span class="check"></span>
+													<span class="box"></span>
+													联通 </label>
+												</div>
+												<div class="md-checkbox">
+													<input type="checkbox" id="CMCC" class="md-check" name="checkbox1">
+													<label for="CMCC">
+													<span></span>
+													<span class="check"></span>
+													<span class="box"></span>
+													移动 </label>
+												</div>
+												<div class="md-checkbox">
+													<input type="checkbox" id="CTCC" class="md-check" name="checkbox1">
+													<label for="CTCC">
+													<span></span>
+													<span class="check"></span>
+													<span class="box"></span>
+													电信 </label>
+												</div>
+											</div>
+                                        </div>
+                                    </div>
+                                    <h4 class="form-section">ip&端口配置</h4>
+                                    <div class="col-md-12 CUCC" data-type="CUCC">
+                                      
+                                    </div>
+                                    <div class="col-md-12 CMCC" data-type="CMCC">
+                                       
+                                    </div>
+                                    <div class="col-md-12 CTCC" data-type="CTCC">
+                                       
+                                    </div>
+                                    <div style="clear:both"></div>
+                                </div>
+                                <div class="tab-pane" id="tab3">
+                                    <h3 class="block">确认配置</h3>
+                                    <h4 class="form-section">基本配置</h4>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">服务类型:</label>
+                                        <div class="col-md-4">
+                                            <p class="form-control-static" data-display="web">
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">回流带宽(Gb/s):</label>
+                                        <div class="col-md-4">
+                                            <p class="form-control-static" data-display="returnBandwidth">
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">清洗流量(Gb):</label>
+                                        <div class="col-md-4">
+                                            <p class="form-control-static" data-display="cleanFlow">
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">协议类型:</label>
+                                        <div class="col-md-4">
+                                            <p class="form-control-static" data-display="protocol">
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <h4 class="form-section">回流IP配置</h4>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">运营商:</label>
+                                        <div class="col-md-4">
+                                           <p class="form-control-static" data-display="checkbox1">
+                                           </p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">IP&端口:</label>
+                                        <div class="col-md-4">
+                                            <p class="form-control-static" data-display="ispIpPort">
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <h4 class="form-section">费用</h4>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">费用:</label>
+                                        <div class="col-md-4">
+                                            <p class="form-control-static">
+                                                ￥2999
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <div class="row">
+                                <div class="col-md-offset-3 col-md-9">
+                                    <a href="javascript:;" class="btn default button-previous">
+												<i class="m-icon-swapleft"></i> 返回 </a>
+                                    <a href="javascript:;" class="btn blue button-next next_btn">
+												下一步 <i class="m-icon-swapright m-icon-white"></i>
+												</a>
+                                    <button id="submit" type="submit" class="btn btn-success button-submit uppercase">提交<i class="m-icon-swapright m-icon-white"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</div>

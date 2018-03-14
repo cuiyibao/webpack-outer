@@ -1,0 +1,13 @@
+{
+    "userName": "yahaha",
+    "token": "1233425",
+    "email": "111@aaa.com",
+    "address":"北京市朝阳区健德门元辰鑫酒店",
+    "phone":"13800002011",
+    "weixin":"13800002011",
+    "info":"这是一个测试临时字符串",
+    "message": "登录成功",
+    "config_num":222,
+    "flow_num":"1000",
+    "status": "200"
+}

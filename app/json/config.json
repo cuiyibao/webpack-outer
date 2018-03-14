@@ -1,0 +1,118 @@
+{
+	"recordsFiltered": 11,
+	"data": [{
+		"id": 1,
+		"web": 1,
+		"confuser": null,
+		"protocol": "http",
+		"returnbandwidth": 200,
+		"cleanflow": 300,
+		"ispipport": null,
+		"conftime": "2017-04-20 19:04:00",
+		"confcontent": "[{\"port\":\"8080\",\"isp\":\"cmcc\",\"ip\":\"172.16.8.18\"},{\"port\":\"77\",\"isp\":\"cccc\",\"ip\":\"172.16.8.19\"}]",
+		"confstate": 1
+	}, {
+		"id": 2,
+		"web": 1,
+		"confuser": null,
+		"protocol": "udp",
+		"returnbandwidth": 200,
+		"cleanflow": 300,
+		"ispipport": null,
+		"conftime": "2017-05-20 19:04:00",
+		"confcontent": "[{\"port\":\"8080\",\"isp\":\"cmcc\",\"ip\":\"172.16.8.18\"}]",
+		"confstate": 0
+	}, {
+		"id": 3,
+		"web": 1,
+		"confuser": null,
+		"protocol": "tcp",
+		"returnbandwidth": 200,
+		"cleanflow": 300,
+		"ispipport": null,
+		"conftime": "2017-05-21 19:04:00",
+		"confcontent": "[{\"port\":\"8080\",\"isp\":\"cmcc\",\"ip\":\"172.16.8.18\"}]",
+		"confstate": 0
+	}, {
+		"id": 4,
+		"web": 1,
+		"confuser": null,
+		"protocol": "http",
+		"returnbandwidth": 200,
+		"cleanflow": 300,
+		"ispipport": null,
+		"conftime": "2017-05-21 19:04:00",
+		"confcontent": "[{\"port\":\"8080\",\"isp\":\"cmcc\",\"ip\":\"172.16.8.18\"}]",
+		"confstate": 0
+	}, {
+		"id": 5,
+		"web": 1,
+		"confuser": null,
+		"protocol": "http",
+		"returnbandwidth": 200,
+		"cleanflow": 300,
+		"ispipport": null,
+		"conftime": "2017-05-21 19:04:00",
+		"confcontent": "[{\"port\":\"8080\",\"isp\":\"cmcc\",\"ip\":\"172.16.8.18\"}]",
+		"confstate": 0
+	}, {
+		"id": 6,
+		"web": 1,
+		"confuser": null,
+		"protocol": "http",
+		"returnbandwidth": 200,
+		"cleanflow": 300,
+		"ispipport": null,
+		"conftime": "2017-05-21 19:04:00",
+		"confcontent": "[{\"port\":\"8080\",\"isp\":\"cmcc\",\"ip\":\"172.16.8.18\"}]",
+		"confstate": 0
+	}, {
+		"id": 7,
+		"web": 1,
+		"confuser": null,
+		"protocol": "http",
+		"returnbandwidth": 200,
+		"cleanflow": 400,
+		"ispipport": null,
+		"conftime": "2017-05-21 19:04:00",
+		"confcontent": "[{\"port\":\"8080\",\"isp\":\"cmcc\",\"ip\":\"172.16.8.18\"}]",
+		"confstate": 0
+	}, {
+		"id": 8,
+		"web": 1,
+		"confuser": null,
+		"protocol": "http",
+		"returnbandwidth": 200,
+		"cleanflow": 300,
+		"ispipport": null,
+		"conftime": "2017-05-21 19:04:00",
+		"confcontent": "[{\"port\":\"8080\",\"isp\":\"cmcc\",\"ip\":\"172.16.8.18\"}]",
+		"confstate": 0
+	}, {
+		"id": 9,
+		"web": 1,
+		"confuser": null,
+		"protocol": "http",
+		"returnbandwidth": 200,
+		"cleanflow": 300,
+		"ispipport": null,
+		"conftime": "2017-05-21 19:04:00",
+		"confcontent": "[{\"port\":\"8080\",\"isp\":\"cmcc\",\"ip\":\"172.16.8.18\"}]",
+		"confstate": 0
+	}, {
+		"id": 10,
+		"web": 1,
+		"confuser": null,
+		"protocol": "http",
+		"returnbandwidth": 200,
+		"cleanflow": 300,
+		"ispipport": null,
+		"conftime": "2017-05-21 19:04:00",
+		"confcontent": "[{\"port\":\"8080\",\"isp\":\"cmcc\",\"ip\":\"172.16.8.18\"}]",
+		"confstate": 0
+	}],
+	"draw": 1,
+	"message": "success",
+	"recordsTotal": 11,
+	"status": "200"
+}
